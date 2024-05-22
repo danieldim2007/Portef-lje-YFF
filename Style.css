@@ -1,0 +1,582 @@
+
+/*importerer google font*/
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+
+html{
+    scroll-behavior: smooth;
+}
+
+
+
+/*fjerner default margin og padding slik at jeg kan endre det senere og legger til fonten som main*/
+body{
+    margin: 0;
+    padding: 0;
+    font-family: "Roboto", sans-serif;
+}
+
+/*Bruker root slik jeg kan opprette variabler som skal vare farger. NB:første gang med root*/
+:root{
+    --rød-farge:#B30000;
+    --gul-farge:#FAE872;
+}
+
+
+/*Bruker flex slik jeg kan manipulere og lage space mellom elementene i klassen elementer*/
+.Elementer{
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 999;
+  transition: background-color 0.4s ease-in-out;
+}
+
+/*Legger style på scrolled klassen*/
+.Elementer.scrolled{
+    background-color: #B22025;
+}
+
+/*legger margin fra siden for wrapper elementet.*/
+.tekst-og-bilde{
+    margin: 6em 2em;
+}
+
+/*legger størrelse på logo*/
+.Logo{
+    margin-left: 2rem;
+}
+
+/*Gir style på logo som er lenke*/
+.Logo a{
+ text-decoration: none;
+ color: black;
+ font-size: 20px;
+ transition: 0.4s ease-in-out;
+}
+
+/*Legger style på scrolled klassen*/
+.scrolled.Logo a{
+    color: white;
+}
+
+/*legger mellomrom fra siden*/
+.Meny{
+    margin-right: 1em;
+}
+
+/*bruker inline-block og legger til margin for å lage mellomrom*/
+.Meny ul li{
+    display: inline-block;
+    margin: 5px;
+}
+
+/*Styling for Meny*/
+.Meny ul li a{
+    text-decoration: none;
+    font-weight: 400;
+    color: black;
+    padding: 10px 20px;
+    border-radius: 30px;
+    transition: color 0.4s ease-in-out, 0.5s;
+}
+
+/*Legger style på scrolled klassen*/
+.Meny.scrolled ul li a{
+    color: white;
+}
+
+/*legger til hover animasjon på Meny*/
+.Meny ul li a:hover{
+    background: var(--gul-farge);
+}
+
+/*Legger style på scrolled klassen*/
+.Meny.scrolled ul li a:hover{
+    background: var(--gul-farge);
+    color: black;
+}
+
+/*Legger til space for tekst*/
+.tekst{
+    margin: 0 1rem;
+    margin-bottom: 1em;
+}
+
+/*bestemmer størrelse for bilde-container og bruker margin for å putte i midten */
+.bilde-container{
+    width: 40%;
+    margin-top: auto;
+    margin-left: auto;
+}
+
+/*legger til størrele på bildet slik det tar 100% av ledig plass i container*/
+.bilde-container img{
+    width: 100%;
+}
+
+
+/*Legger space fra siden på teksten*/
+.tekst{
+    margin: 0 3rem;
+}
+
+/*Bruker flex på teksten og bildet og legger det i midten*/
+.tekst-og-bilde{
+    margin-bottom: 7rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Style for Hei tekst*/
+.Hei{
+    margin-left: 3px;
+    font-size: 40px;
+    font-weight:500;
+}
+
+/*Style for Navn tekst*/
+.Navn{
+    margin-left: 2px;
+    font-size: 60px;
+    font-weight: 500;
+}
+
+/*Style for Utdanning tekst*/
+.Utdanning{
+    font-size: 30px;
+    font-weight: 490;
+    margin-bottom: 2rem;
+}
+
+/*legger margin på space Om-meg-button*/
+.Om-meg-button{
+  margin-top: 3em;
+  margin-left: 2px;
+}
+
+/*Style for Om-meg-button tekst*/
+.Om-meg-button a{
+    text-decoration: none;
+    font-weight: 420;
+    color: black;
+    padding: 15px 50px;
+    font-size: 20px;
+    border-radius: 20px;
+    border: 2px solid var(--rød-farge);
+    transition: 0.7s;
+}
+
+/*legger til hover animasjon på Om-meg-button*/
+.Om-meg-button a:hover{
+    background-color: var(--rød-farge);
+    color: white;
+}
+
+/*Style for container og brukre flex for å endre hvor elementer legger seg*/
+.container{
+    background-color: #B30000;
+    height: 500px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Style for tekst-om-prosjekter*/
+.tekst-om-prosjekter{
+    line-height: 55px;
+    margin: 7em 0;
+    width: 45%;
+    height:50%;
+    padding: 10px;
+    
+}
+
+/*Endrer p-elementet i tekst-om-prosjekter*/
+.tekst-om-prosjekter p{
+    margin-top: 6em;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 380;
+    color: white;
+}
+
+/*Legger til flex på container med bilder*/
+.container-med-bilder-prosjekter{
+    display: flex;
+    position: relative;
+    gap: 5rem;
+    padding: 2rem;
+    justify-content: center;
+    align-items: center;
+}
+
+/*Legger til "position relativ på bildene og gir bildene bredde på 20rem*/
+.Bilder-til-prosjekter{
+    position: relative;
+    width: 20rem;
+    
+}
+
+/*Legger style på bildene, 100% bredde av boksen og object fit. box-shadow for å legge til skygge*/
+.bilde-prosjekt{
+    position: relative;
+    width: 100%;
+    height:320px;
+    object-fit: cover;
+    border-radius: 30px;
+    box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.4)
+}
+
+/*bruker position absolute på layer klass for at den legger seg på bilde boksen.*/
+.layer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 30px;
+    transition: 0.5s;
+}
+
+/*Hover animasjon for layer*/
+.layer:hover{
+    background: rgb(0, 0, 0,.5);
+}
+
+/*Legger style på layer h3*/
+.layer h3{
+    width: 100%;
+    color: white;
+    font-size: 40px;
+    text-align: center;
+    position: absolute;
+    margin-top: 23rem;
+    transition: 0.5s;
+}
+
+/*Legger hover animasjon på h3 som ligger i klass layer*/
+.layer:hover h3{
+    display: block;
+    margin-top: 2rem;
+
+}
+
+/*Style for gull-linje*/
+.gull-linje{
+   margin-top: 20%;
+   background-color: var(--gul-farge);
+   height: 8em;
+}
+
+/*Style for tekst-og-btn*/
+.tekst-og-btn{
+    margin-top: 3rem;
+    margin-left: 5rem;
+}
+
+/*Style for tekst-og-btn p element*/
+.tekst-og-btn p{
+    line-height: 1.5em;
+    font-size: 30px;
+    font-weight: 400;
+    margin-bottom: 2rem;
+}
+
+/*Legger style på Bli-kjent-meg-meg oog bruker flex*/
+.Bli-kjent-med-meg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 0;
+    background: var(--rød-farge);
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.4)
+}
+
+/*Legger style på anchor tag som ligger i tekst-kjent klassen*/
+.tekst-kjent a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 0 1em;
+    padding-left: 2em;
+}
+
+/*Legger style på Bli-kjent-ikon img*/
+.Bli-kjent-ikon img{
+    height: 30px;
+    padding-right: 3.5em;
+}
+
+/*Legger style på Kontakt-meg*/
+.Kontakt-meg{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50px;
+    padding: 0;
+    background: var(--rød-farge);
+    border: none;
+    border-radius: 20px;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 4px 4px 10px rgb(0, 0, 0, 0.4)
+}
+
+/*Legger style på anchor tag på tekst-kontakt*/
+.tekst-kontakt a{
+    text-decoration: none;
+    color: white;
+    font-size: 18px;
+    padding: 0 1em;
+    padding-left: 2em;
+}
+
+/*Legger style på img på Bli-kontakt-ikon*/
+.Bli-Kontakt-ikon img{
+    height: 30px;
+    padding-right: 2.5em;
+}
+
+/*Legger flex på buttons som immeholder bli kjent med meg knappen og kontakt knappen*/
+.buttons{
+    display: flex;
+    gap: 20px;
+}
+
+/*Bruker flex på mine prosjekter*/
+.Mine-prosjekter{
+    display: flex;
+    gap: 50px;
+}
+
+/*Gir Animasjon boksen bredde på 40% som tilsvarer 40% prosent av hele containeren den er i*/
+.Animasjon{
+    width: 40%;
+}
+
+/*Legger style på img som ligger på Animasjon*/
+.Animasjon img{
+    padding-top: 2rem;
+    width: 100%;
+    height: 40rem;
+}
+
+/*Legger style på Container-om-meg og bruker flex*/
+.container-om-meg{
+    margin-top: 4rem;
+    background-color: #B30000;
+    height: 700px;
+    display: flex;
+    flex-direction: column;
+}
+
+/*legger space fra top og venstre på tekst-om-meg-avatar*/
+.tekst-om-meg-avatar{
+    margin-top: 2rem;
+    margin-left: 5rem;
+}
+
+/*Legger style på h3 i tekst-om-meg-avatar*/
+.tekst-om-meg-avatar h3{
+    font-size: 40px;
+    color: white;
+}
+
+/*Legger style på p i tekst-om-meg-avatar*/
+.tekst-om-meg-avatar p{
+    font-size: 30px;
+    color: white;
+}
+
+/*Legger flex på tekst-om-meg-avatar bosen som inneholder teksten og bildet av avatar*/
+.tekst-om-meg-avatar{
+    display: flex;
+    gap: 8rem;
+}
+
+/*gir avatar-animasjon-bilde en bredde og auto margin slik at det er defualt space fra toppen*/
+.avatar-animasjon-bilde{
+    width: 30%;
+    margin-top: auto;
+}
+
+/*Gir img på avatar-animasjon-bilde en bredde på 100% av containeren sin*/
+.avatar-animasjon-bilde img{
+    width: 100%;
+}
+
+/*Legger style på container-kontakt og bruker flex*/
+.container-kontakt{
+    margin-top: 20rem;
+    display: flex;
+    gap: 90px;
+    background-color:var(--rød-farge);
+    padding: 3rem 5rem;
+    height: auto;
+}
+
+/*Legger style på h3 i container-kontakt*/
+.container-kontakt h3{
+    font-size: 40px;
+    color: white;
+    margin-left: 2rem;
+}
+
+/*Bruker flex på første-input og brukr position relativ på første-input*/
+.første-input{
+    display: flex;
+    position: relative;
+}
+
+/*Legger style til input på første-input*/
+.første-input input{
+    width: 100%;
+    padding: 2rem 0;
+    font-size: 30px;
+    padding-left: 80px;
+    border-radius: 20px;
+    outline: none;
+    color: var(--rød-farge);
+}
+
+/*Legger style til placeholder til input*/
+.første-input input::placeholder{
+    color: var(--rød-farge);
+}
+
+/*legger til postion absolute på ikon_person slik at det legger seg i input feltet*/
+.ikon-person{
+    position: absolute;
+}
+
+.ikon-person img{
+    margin: 2rem;
+    width: 30px;
+}
+
+/*alt har er det samme som på første input*/
+.andre-input{
+    display: flex;
+    position: relative;
+}
+
+.andre-input input{
+    width: 100%;
+    padding: 2rem 0;
+    font-size: 30px;
+    padding-left: 90px;
+    border-radius: 20px;
+    outline: none;
+    color: var(--rød-farge);
+}
+
+.andre-input input::placeholder{
+    color: var(--rød-farge);
+}
+
+.ikon-email{
+    position: absolute;
+}
+
+.ikon-email img{
+    margin-top: 2rem;
+    margin-left: 2rem;
+    width: 40px;
+}
+
+/*legger til flex på inpust som er boksen for begge input*/
+.inputs{
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    width: 50%;
+}
+
+/*legger style på tredje-input input*/
+.tredje-input input{
+    width: 92%;
+    padding: 2rem 0;
+    padding-left: 1em;
+    font-size: 30px;
+    padding-bottom: 9rem;
+    border-radius: 20px;
+    outline: none;
+    color: var(--rød-farge);
+}
+
+/*legger style på placeholder input*/
+.tredje-input input::placeholder{
+    color: var(--rød-farge);
+}
+
+/*legger style på send klassen*/
+.send{
+   height: 50px;
+   width: 30%;
+   background: var(--rød-farge);
+   border: none;
+   border-radius: 20px;
+   outline: none;
+   cursor: pointer;
+   color: var(--rød-farge);
+   background-color: white;
+   box-shadow: 4px 20px 10px rgb(0, 0, 0, 0.4)
+
+}
+
+/*legger style på send-tekst*/
+.send-tekst{
+   font-size: 25px;
+   font-weight: bold;
+}
+
+/*legger style på skjema-bilde boksen*/
+.skjema-bilde{
+        width: 35%;
+        margin-top: 10em;
+}
+
+/*legger style på img som ligger skjema-bilde boksen*/
+.skjema-bilde img{
+        width: 100%;
+}
+
+/*fjerner display til id knapp, men display vil endre seg når de trykker på send knappen på grunn av JavaScript*/
+#knapp{
+    display: none;
+}
+
+/*legger style etter-knapp*/
+.etter-knapp{
+    margin-top: 20rem;
+    display: flex;
+    gap: 90px;
+    background-color:var(--rød-farge);
+    padding: 15rem 10rem;
+    height: auto;
+}
+
+/*legger style etter-knapp h1*/
+.etter-knapp h1{
+  text-align: center;
+  color: white;
+  font-size: 40px;
+}
+
+/*legger style på usynelig slik at lenkene ikke legger seg på bildet og teksten*/
+.usynelig{
+    position: absolute;
+    top: 0;
+
+}
